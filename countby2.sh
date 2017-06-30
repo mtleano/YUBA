@@ -21,7 +21,13 @@ echo "Hello $myName"
 echo "Please input an integer between 3 and 100:"
 read myNum
 
-while [[ -n ${myNum//[0-9]/} ]]
+while [ "$myNum" == "" ]
+	do
+	echo "Please input an integer between 3 and 100:"
+	read myNum
+done
+
+while ! [[ "$myNum" =~ ^[0-9]+$ ]]
 	do
 	echo "Please input an integer between 3 and 100:"
 	read myNum
